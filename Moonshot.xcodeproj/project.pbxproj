@@ -15,7 +15,6 @@
 		0E4F2AF4291981FB00AFFC28 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F2AF3291981FB00AFFC28 /* Bundle-Decodable.swift */; };
 		0E4F2AF62919853500AFFC28 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F2AF52919853500AFFC28 /* Mission.swift */; };
 		0E4F2AF82919BCCD00AFFC28 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F2AF72919BCCD00AFFC28 /* Color-Theme.swift */; };
-		0EA326432946FA5A00A667D7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA326422946FA5A00A667D7 /* ListView.swift */; };
 		0EED64682900BBF100353423 /* MoonshotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED64672900BBF100353423 /* MoonshotApp.swift */; };
 		0EED646A2900BBF100353423 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED64692900BBF100353423 /* ContentView.swift */; };
 		0EED646C2900BBF200353423 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EED646B2900BBF200353423 /* Assets.xcassets */; };
@@ -31,7 +30,6 @@
 		0E4F2AF3291981FB00AFFC28 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		0E4F2AF52919853500AFFC28 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		0E4F2AF72919BCCD00AFFC28 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
-		0EA326422946FA5A00A667D7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		0EED64642900BBF100353423 /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EED64672900BBF100353423 /* MoonshotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonshotApp.swift; sourceTree = "<group>"; };
 		0EED64692900BBF100353423 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 			children = (
 				0EED64672900BBF100353423 /* MoonshotApp.swift */,
 				0EED64692900BBF100353423 /* ContentView.swift */,
-				0EA326422946FA5A00A667D7 /* ListView.swift */,
 				0E4F2AED2919810B00AFFC28 /* astronauts.json */,
 				0E4F2AF12919819800AFFC28 /* Astronaut.swift */,
 				0E4F2AF3291981FB00AFFC28 /* Bundle-Decodable.swift */,
@@ -168,7 +165,6 @@
 			files = (
 				0E0FE942292BF9DF0076B661 /* MissionView.swift in Sources */,
 				0E4F2AF22919819800AFFC28 /* Astronaut.swift in Sources */,
-				0EA326432946FA5A00A667D7 /* ListView.swift in Sources */,
 				0E0FE944292C514B0076B661 /* AstronautView.swift in Sources */,
 				0E4F2AF82919BCCD00AFFC28 /* Color-Theme.swift in Sources */,
 				0EED646A2900BBF100353423 /* ContentView.swift in Sources */,
