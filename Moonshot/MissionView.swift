@@ -7,17 +7,74 @@
 
 import SwiftUI
 
+// Wraps around the object astronaut because of the role
+// Declaring this in public so both horizontal scroll view and mission view can access it.
+struct CrewMember {
+    let role: String
+    let astronaut: Astronaut
+}
+
+
+struct HorizontalScrollView: View {
+    
+    let crew: [CrewMember]
+    
+    var body: some View {
+
+        // Could add the text Crew and triangle here, but it's probably easier to keep the spacing consistent
+
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(crew, id: \.role) { crewMember in
+                    NavigationLink{
+                        AstronautView(astronaut: crewMember.astronaut)
+                    } label: {
+                        HStack {
+                            Image(crewMember.astronaut.id)
+                                .resizable()
+                                .frame(width: 104, height: 72)
+                                .clipShape(Capsule())
+                                .overlay(
+                                    // Small stroke, inside of the stroke (normal stroke is half inside half outside
+                                    Capsule()
+                                        .strokeBorder(.white, lineWidth: 1)
+                                )
+                            
+                            VStack(alignment: .leading) {
+                                Text(crewMember.astronaut.name)
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                                
+                                Text(crewMember.role)
+                                    .foregroundColor(.secondary)
+                                
+                            }
+                            
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
 struct MissionView: View {
     
-    // Wraps around the object astronaut because of the role
-    struct CrewMember {
-        let role: String
-        let astronaut: Astronaut
-    }
+//    struct CrewMember {
+//        let role: String
+//        let astronaut: Astronaut
+//    }
     
     let mission: Mission
     let crew: [CrewMember]
-    
     
     
     
@@ -34,7 +91,6 @@ struct MissionView: View {
                     Text(mission.formattedLaunchDate)
                         .font(.headline.italic())
                     
-                    // Very useless
                     
                     VStack(alignment: .leading) {
                         
@@ -55,50 +111,21 @@ struct MissionView: View {
                             .frame(height:2)
                             .foregroundColor(.lightBackground)
                             .padding(.vertical)
-                        
+
                         // Kept in here (although its logically next to the scrollview, to keep padding consistent and aligned.
                         Text("Crew")
                             .font(.title.bold())
                             .padding(.bottom, 5)
+                        
+
                     }
                     // stay away from border of screen
                     .padding(.horizontal)
                     
                     // Scrollview is outside of the VStack because it works better being edge to edge
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(crew, id: \.role) { crewMember in
-                                NavigationLink{
-                                    AstronautView(astronaut: crewMember.astronaut)
-                                } label: {
-                                    HStack {
-                                        Image(crewMember.astronaut.id)
-                                            .resizable()
-                                            .frame(width: 104, height: 72)
-                                            .clipShape(Capsule())
-                                            .overlay(
-                                                // Small stroke, inside of the stroke (normal stroke is half inside half outside
-                                                Capsule()
-                                                    .strokeBorder(.white, lineWidth: 1)
-                                            )
-                                        
-                                        VStack(alignment: .leading) {
-                                            Text(crewMember.astronaut.name)
-                                                .foregroundColor(.white)
-                                                .font(.headline)
-                                            
-                                            Text(crewMember.role)
-                                                .foregroundColor(.secondary)
-                                            
-                                        }
-                                        
-                                    }
-                                    .padding(.horizontal)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.vertical)
+                    HorizontalScrollView(crew: crew)
+                        .padding(.vertical)
+                    
                 }
                 .padding(.bottom)
             }

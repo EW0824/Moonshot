@@ -23,7 +23,7 @@ struct Mission: Codable, Identifiable {
     
     
     var displayName: String {
-        "Appolo \(id)"
+        "Apollo \(id)"
     }
     
     var image: String {
